@@ -10,13 +10,18 @@ body{
 
 /*-------------- BARRA DE NAVEGAÇÃO -------*/
 
+.navbar{
+     background-color: black;
+     
+}
+
 .img-link img{
      height: 8vh;
      margin: 0vh 2vw;
 }
 
 .navbar-link{
-     color: white;
+     color: rgb(0, 0, 0);
      font-size: 1.8rem;
 }
 
@@ -65,6 +70,7 @@ body{
 
 /*------------------- HOME ---------------*/
 
+
 .text-home{
      align-items: center;
      align-content: center;
@@ -86,8 +92,8 @@ body{
     width: 55vh;
     animation: flutuar 3s ease-in-out infinite;
     filter:
-        drop-shadow(0 0 5px #1100ff)
-        drop-shadow(0 0 2px #00ffff)
+        drop-shadow(0 0 8px #1100ff)
+        drop-shadow(0 0 10px #00ffff)
         drop-shadow(0 0 15px #1100ff);
 }
 
@@ -105,6 +111,11 @@ body{
 
 #home{
      height: 100vh;
+     margin: 10vh 0vw;
+}
+
+.direita{
+     margin: -8vh 8vw;
 }
 
 .img-home{
@@ -117,7 +128,7 @@ body{
 }
 
 .button-home{
-     margin: 5vh 0.5vw;
+     margin: 2vh 0.5vw;
      background-color: black;
      border-radius: 20px;
      color: white;
@@ -132,4 +143,31 @@ body{
 .button-home:hover {
      background: #1100ff;
      
+}
+
+#typing {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #ffffff;
+    border-right: 3px solid #00ffff;
+    padding-right: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0% { border-color: transparent; }
+    50% { border-color: #0400ff; }
+    100% { border-color: transparent; }
+}
+
+.text-home h2{
+     font-size: 5rem;
+}
+
+.text-home h1{
+     font-size: 2rem;
+     text-align: left;
+     padding: 0vh 10vw;
 }

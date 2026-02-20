@@ -10,7 +10,7 @@
       </head>
       <body>
            <!--BARRA DE NAVEGAÇÃO--> 
-           <header class="container-fluid navbar navbar-expand-md">
+           <header class="container-fluid navbar navbar-expand-md fixed-top">
                 <a class="img-link" href="index.html"><img src="img/logo-img.png" alt=""></a>
                 <a class="navbar-link navbar-brand" href="">KAREN ROCHA</a>
                 <button class="navbar-toggler" type="button" data-bs-toggler="collapse" data-bs-target="#navbarCollapse">
@@ -34,24 +34,20 @@
                      <div class="text-home col-md-6">
                           <h1>Olá, meu nome é</h1>
                           <h2>KAREN ROCHA</h2>
-                          <span>
-                               <!--PROGRAMADORA FRONTEND 
-                               GRADUANDA EM CIÊNCIAS DA COMPUTAÇÃO 
-                               DESENVOLVEDORA FULL STACK EM FORMAÇÃO-->
-                          </span>
+                          <span id="typing"></span><br>
                           <button class="button-home">CONTATO</button>
                           <button class="button-home">CURRICULO</button>
                           <button class="button-home">PORTIFÓLIO</button>
                      </div>
-                     <div class="col-md-6">
+                     <div class=" col-md-6">
                          <div>
                               <img class="perfil-home"src="img/img-perfil.png" alt="MINHA FOTO">
                          </div>
+                         <div class="direita">
                           <a href=""><img class="img-home" src="img/home-icon-github.png" alt=""></a>
                           <a href=""><img class="img-home" src="img/home-icon-ig.png" alt=""></a>
                           <a href=""><img class="img-home" src="img/home-icon-in.png" alt=""></a>
-                          <a href=""><img class="img-home" src="img/home-icon-ig.png" alt=""></a>
-                          <a href=""><img class="img-home" src="img/home-icon-ig.png" alt=""></a>
+                          </div>
                      </div>
                 </div>
            </section>
@@ -302,6 +298,41 @@
                           <p>Transformando ideias em código e curiosidade me soluções reais</p>
                      </div>
                 </div>
-           </footer>                                                                                                                                      
+           </footer>  
+           <script src="script.js"></script>   
+           <script>
+const texts = [
+  "PROGRAMADORA FRONTEND",
+  "GRADUANDA EM CIÊNCIAS DA COMPUTAÇÃO",
+  "DESENVOLVEDORA FULL STACK EM FORMAÇÃO"
+];
+
+let index = 0;
+let charIndex = 0;
+let isDeleting = false;
+const speed = 80;
+const typingElement = document.getElementById("typing");
+
+function typeEffect() {
+  const currentText = texts[index];
+
+  if (!isDeleting) {
+    typingElement.textContent = currentText.substring(0, charIndex++);
+    if (charIndex > currentText.length) {
+      setTimeout(() => isDeleting = true, 1200);
+    }
+  } else {
+    typingElement.textContent = currentText.substring(0, charIndex--);
+    if (charIndex === 0) {
+      isDeleting = false;
+      index = (index + 1) % texts.length;
+    }
+  }
+
+  setTimeout(typeEffect, isDeleting ? speed / 2 : speed);
+}
+
+typeEffect();
+</script>                                                                                                                                 
       </body>
  </html>
